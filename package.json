@@ -1,0 +1,16 @@
+{
+  "name": "rotary-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodary-encoder": "^0.1.4",
+    "onoff": "^6.0.3"
+  }
+}

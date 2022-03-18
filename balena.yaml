@@ -1,0 +1,27 @@
+name: rotary-knob
+description: >-
+  Rotary-reader provides an easy way to integrate a rotary encoder into your application.
+  Instead of importing a library and handling the GPIO events, you can include this block as a container and listen for the UDP notifications it generates.
+version: 0.1.1
+type: sw.application
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: 'https://github.com/ramirogm/rotary-knob'
+  logo:
+    type: blob.asset
+    data:
+      url: 'https://raw.githubusercontent.com/ramirogm/rotary-knob/main/logo.png'
+      # Logo from https://www.pngwing.com/en/free-png-zsndf
+data:
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberry-pi
+    - raspberry-pi2
+    - raspberrypi3
+    - raspberrypi3-64
+    - raspberrypi4-64
+    - intel-nuc
+    - jetson-nano
+    - beaglebone-black
