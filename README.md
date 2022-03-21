@@ -29,7 +29,7 @@ To use this image, create a container in your `docker-compose.yml` file as shown
 version: '2'
 services:
   rotary-reader:  # You could create more than one if needed
-    image: ramirogmbalena/rotary-reader:raspberrypi4-64-latest  # See available tags at https://hub.docker.com/repository/docker/ramirogmbalena/rotary-reader/tags?page=1&ordering=last_updated
+    image: bhcr.io/ramiro_gonzalez/rotary-knob:raspberrypi4-64-latest  # See available tags at https://hub.docker.com/repository/docker/ramirogmbalena/rotary-reader/tags?page=1&ordering=last_updated
     privileged: true
     environment: 
       - RENC_LISTENER_ADDRESS=app  # see the app container
