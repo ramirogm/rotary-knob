@@ -1,11 +1,11 @@
-# Rotary reader
+# Rotary knob
 
-Rotary-reader provides an easy way to integrate a rotary encoder into your application. Instead of importing a library and handling the GPIO events, you can include this block as a container and listen for the events it generates.
+Rotary-knob provides an easy way to integrate a rotary encoder into your application. Instead of importing a library and handling the GPIO events, you can include this block as a container and listen for the events it generates.
 
 
-Rotary-reader decodes the clicks from a rotary encoder, detects the rotation direction, tracks the position using an integer, and publishes this info by sending UDP datagrams with the encoded data.
+Rotary-knob decodes the clicks from a rotary encoder, detects the rotation direction, tracks the position using an integer, and publishes this info by sending UDP datagrams with the encoded data.
 
-Each time a new event occurs ( rotating the knob clockwise, rotating it counterclockwise or pushing the knob ), the reader sends a new packet to the configured IP address and port.
+Each time a new event occurs ( rotating the knob clockwise, rotating it counterclockwise or pushing the knob ), the rotary-knob sends a new packet to the configured IP address and port.
 
 The packet format is:
 
@@ -29,7 +29,7 @@ To use this image, create a container in your `docker-compose.yml` file as shown
 version: '2'
 services:
   rotary-reader:  # You could create more than one if needed
-    image: bhcr.io/ramiro_gonzalez/rotary-knob:raspberrypi4-64-latest  # See available tags at https://hub.docker.com/repository/docker/ramirogmbalena/rotary-reader/tags?page=1&ordering=last_updated
+    image: bhcr.io/ramiro_gonzalez/rotary-knob:raspberrypi4-64-latest
     privileged: true
     environment: 
       - RENC_LISTENER_ADDRESS=app  # see the app container
@@ -41,7 +41,7 @@ services:
   app:
     build: ./app
     expose:
-      - "8001"    # rotary-reader will send UDP packets to this port
+      - "8001"    # rotary-knob will send UDP packets to this port
 ```
 
 Now on your app you can listen to the UDP datagrams. For example, in a node app:
@@ -89,7 +89,7 @@ This block is a node.js app that uses two libraries to read the events,  `nodary
 
 ## Configuration
 
-The rotary-reader works with the following environment variables:
+rotary-knob works with the following environment variables:
 
 | Env Var | Description | Default |
 |:---|:----|:---|
