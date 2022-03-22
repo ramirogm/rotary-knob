@@ -1,5 +1,5 @@
 /*
-RotaryKnob events processing logic that converts into a value
+Rotary knob events processing logic that converts into a value
 
 Here we're using onoff: https://www.npmjs.com/package/onoff onoff relies on sysfs files located at /sys/class/gpio, 
 and https://github.com/smallab/nodary-encoder to read the encoder value
@@ -11,7 +11,7 @@ https://github.com/fivdi/spi-device
 https://github.com/fivdi/mcp-spi-adc
 
 
-Note on how the reader is implemented from a source of nodary-encoder: https://github.com/nstansby/rpi-rotary-encoder-python
+Note on how the knob is implemented from a source of nodary-encoder: https://github.com/nstansby/rpi-rotary-encoder-python
 
 
 */
@@ -31,7 +31,7 @@ const swPin = process.env.RENC_SW_GPIO_PIN || 22;
 const listenerPort = process.env.RENC_LISTENER_PORT || '8001';
 const listenerAddress = process.env.RENC_LISTENER_ADDRESS || 'localhost';
 
-logEnabled && console.log("rotary reader starting");
+logEnabled && console.log("rotary knob starting");
 logEnabled && console.log(`Pins: CLK: ${clkPin} DT: ${dtPin} SW: ${swPin}`);
 logEnabled && console.log(`listener: listenerAddress: ${listenerAddress} listenerPort: ${listenerPort}`);
 
@@ -109,7 +109,7 @@ process.on('SIGINT', _ => {
     sw.unexport();
   });
 
-logEnabled && console.log("rotary reader started");
+logEnabled && console.log("rotary knob started");
 
 logEnabled && console.log("Initial sw:", swLastState);
 logEnabled && console.log("=========================================");

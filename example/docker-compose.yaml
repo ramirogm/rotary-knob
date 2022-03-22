@@ -1,0 +1,12 @@
+version: '2.1'
+services:
+  tuning-knob:
+    image: bhcr.io/ramiro_gonzalez/rotary-knob
+    privileged: true
+    environment: 
+      RENC_LISTENER_ADDRESS: localhost # this is of course not going to generate any results, you should change it to some other listener
+      RENC_LISTENER_PORT: 8001
+      RENC_CLK_GPIO_PIN: 17
+      RENC_DT_GPIO_PIN: 27
+      RENC_SW_GPIO_PIN: 22
+      LOG_ENABLED: 1
